@@ -1,7 +1,7 @@
 #!/usr/bin/make -f
 # See debhelper(7) (uncomment to enable)
 # output every command that modifies files on the build system.
-#DH_VERBOSE = 1
+# DH_VERBOSE = 1
 # see FEATURE AREAS in dpkg-buildflags(1)
 #export DEB_BUILD_MAINT_OPTIONS = hardening=+all
 # see ENVIRONMENT in dpkg-buildflags(1)
@@ -10,10 +10,15 @@
 # package maintainers to append LDFLAGS
 #export DEB_LDFLAGS_MAINT_APPEND = -Wl,--as-needed
 
+# Clear debianized compile flags
+export DEB_CFLAGS_MAINT_SET=
+export DEB_LDFLAGS_MAINT_SET=
+
 export ATF_BIN=build/sun50iw1p1/release/bl31.bin
 
 $(ATF_BIN):
-	make PLAT=sun50iw1p1 DEBUG=0 bl31
+	set
+	CROSS_COMPILE=$(DEB_HOST_GNU_TYPE)- $(MAKE) PLAT=sun50iw1p1 DEBUG=0 bl31
 
 override_dh_auto_build: $(ATF_BIN)
 
