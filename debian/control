@@ -1,0 +1,13 @@
+Source: arm-trusted-firmware
+Section: misc
+Priority: extra
+Maintainer: Michael Walton <mike@farsouthnet.com>
+Build-Depends: debhelper (>= 9)
+Standards-Version: 3.9.4
+
+Package: arm-trusted-firmware
+Architecture: any
+Depends: 
+Description: ARM trusted firmware
+ ARM trusted firmware for Allwinner A64 on Far South Networks Wanderer 2
+

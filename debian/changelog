@@ -1,0 +1,5 @@
+arm-trusted-firmware (1.0) xenial; urgency=medium
+
+  * Initial release. 
+
+ -- Michael Walton <mwalton@fsn-mike.intranet.farsouthnet.com>  Mon, 15 Oct 2018 16:06:08 +1300
